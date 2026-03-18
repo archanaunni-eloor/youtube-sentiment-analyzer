@@ -128,4 +128,4 @@ if st.sidebar.button("Run Analysis"):
         st.dataframe(final_df.sort_values(by='Positive_Sentiment_%', ascending=False))
 
 else:
-    st.info("← വശത്തുള്ള ബോക്സിൽ ഒരു വിഷയം നൽകി 'Run Analysis' അമർത്തുക.")
+    st.info("← Please provide a topic in the side box and then click 'Run Analysis'.")
