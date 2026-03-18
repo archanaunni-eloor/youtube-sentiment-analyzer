@@ -121,7 +121,7 @@ if st.sidebar.button("Run Analysis"):
                          title="Engagement Analysis (Size = Likes)")
         st.plotly_chart(fig, use_container_width=True)
 
-        # Show Data Table
+        # Show Data Tablee
         st.subheader("Raw Data")
         st.dataframe(final_df.sort_values(by='Positive_Sentiment_%', ascending=False))
         # --- PASTE THE DOWNLOAD BUTTON HERE ---
