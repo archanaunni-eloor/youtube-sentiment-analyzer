@@ -124,6 +124,12 @@ if st.sidebar.button("Run Analysis"):
         # Show Data Table
         st.subheader("Raw Data")
         st.dataframe(final_df.sort_values(by='Positive_Sentiment_%', ascending=False))
-
+        # --- PASTE THE DOWNLOAD BUTTON HERE ---
+        st.download_button(
+            label="Download Analysis as CSV",
+            data=final_df.to_csv().encode('utf-8'),
+            file_name='youtube_analysis_results.csv',
+            mime='text/csv',
+        )
 else:
     st.info("← Please provide a topic in the side box and then click 'Run Analysis'.")
