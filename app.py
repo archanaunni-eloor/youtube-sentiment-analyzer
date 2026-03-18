@@ -82,8 +82,7 @@ st.set_page_config(page_title="YouTube Analytics Dashboard", layout="wide")
 
 st.title("📊 YouTube Sentiment & Engagement Analyzer")
 st.markdown("""
-ഈ ആപ്പ് ഉപയോഗിച്ച് ഏതൊരു വിഷയത്തെക്കുറിച്ചുമുള്ള യൂട്യൂബ് വീഡിയോ ട്രെൻഡുകളും 
-പ്രേക്ഷകരുടെ പ്രതികരണങ്ങളും (Sentiment) തത്സമയം വിശകലനം ചെയ്യാം.
+With this app, you can perform real-time analysis of YouTube video trends and audience sentiment on any topic.
 """)
 
 # Sidebar for Input
