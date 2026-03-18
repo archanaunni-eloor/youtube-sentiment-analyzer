@@ -4,11 +4,7 @@ from googleapiclient.discovery import build
 from textblob import TextBlob
 import plotly.express as px
 
-# --- 1. CONFIGURATION ---
-# പഴയ രീതി (ഇത് ഒഴിവാക്കുക)
-# API_KEY = "AIza..." 
 
-# പുതിയ സുരക്ഷിതമായ രീതി
 import streamlit as st
 API_KEY = st.secrets["YOUTUBE_API_KEY"] 
 youtube = build('youtube', 'v3', developerKey=API_KEY)
