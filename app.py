@@ -10,7 +10,7 @@ youtube = build('youtube', 'v3', developerKey=API_KEY)
 # --- 2. HELPER FUNCTIONS ---
 
 def search_videos(query, max_results=10):
-    """യൂട്യൂബിൽ നിന്ന് വീഡിയോകൾ സെർച്ച് ചെയ്യുന്നു"""
+    """Search Vedios from youtube"""
     request = youtube.search().list(
         q=query,
         part="snippet",
@@ -29,7 +29,7 @@ def search_videos(query, max_results=10):
     return pd.DataFrame(video_data)
 
 def get_video_stats(video_ids):
-    """വീഡിയോയുടെ ലൈക്ക്, വ്യൂസ് എന്നിവ ശേഖരിക്കുന്നു"""
+    """Collect like,views etc"""
     request = youtube.videos().list(
         part="statistics",
         id=','.join(video_ids)
@@ -46,7 +46,7 @@ def get_video_stats(video_ids):
     return pd.DataFrame(stats)
 
 def get_sentiment(text):
-    """ടെക്സ്റ്റിന്റെ സെന്റിമെന്റ് കണ്ടെത്തുന്നു"""
+    """Find sendiments"""
     analysis = TextBlob(text)
     if analysis.sentiment.polarity > 0:
         return 'Positive'
@@ -56,7 +56,7 @@ def get_sentiment(text):
         return 'Negative'
 
 def get_video_comments_sentiment(video_id):
-    """വീഡിയോ കമന്റുകൾ വിശകലനം ചെയ്ത് സ്കോർ നൽകുന്നു"""
+    """Analyse comments and give score"""
     try:
         request = youtube.commentThreads().list(
             part="snippet",
